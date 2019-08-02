@@ -20,16 +20,16 @@ self.addEventListener('install', function() {
 
 self.addEventListener('activate', function() {
   console.log('activate fireabase messaging sw');
-  registration.showNotification("activate", {
-    title: 'activate',
-    body: 'worker activate'
-  });
+  // registration.showNotification("activate", {
+  //   title: 'activate',
+  //   body: 'worker activate'
+  // });
 });
 
-messaging.setBackgroundMessageHandler(function(payload) {
-  console.log(payload);
-  return self.registration.showNotification(payload.data.title, payload.data);
-});
+// messaging.setBackgroundMessageHandler(function(payload) {
+//   console.log(payload);
+//   return self.registration.showNotification(payload.data.title, payload.data);
+// });
 
 self.addEventListener('push', function () {
   console.log(arguments);
