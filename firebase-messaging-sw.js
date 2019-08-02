@@ -31,8 +31,8 @@ self.addEventListener('activate', function() {
 //   return self.registration.showNotification(payload.data.title, payload.data);
 // });
 
-self.addEventListener('push', function (payload) {
+self.addEventListener('push', function (event) {
   console.log('sw push event');
-  console.log(payload);
+  console.log(event.data.json());
   return self.registration.showNotification(payload.data.title, payload.data);
 });
