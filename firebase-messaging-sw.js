@@ -13,7 +13,6 @@ firebase.initializeApp({
 // Retrieve an instance of Firebase Messaging so that it can handle background
 // messages.
 const messaging = firebase.messaging();
-//fdsafd
 
 self.addEventListener('install', function() {
   console.log('install firebase messaging sw');
@@ -27,6 +26,11 @@ self.addEventListener('activate', function() {
   });
 });
 
-messaging.setBackgroundMessageHandler(function() {
+messaging.setBackgroundMessageHandler(function(payload) {
+  console.log(payload);
+  return self.registration.showNotification(payload.data.title, payload.data);
+});
+
+self.addEventListener('push', function () {
   console.log(arguments);
-})
+});
