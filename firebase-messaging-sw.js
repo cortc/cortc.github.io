@@ -33,6 +33,6 @@ self.addEventListener('activate', function() {
 
 self.addEventListener('push', function (event) {
   console.log('sw push event');
-  console.log(event.data.json());
-  return self.registration.showNotification(payload.data.title, payload.data);
+  const data = event.data.json();
+  return self.registration.showNotification(data.notification.title, data.notification);
 });
