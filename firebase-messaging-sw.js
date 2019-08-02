@@ -33,4 +33,5 @@ messaging.setBackgroundMessageHandler(function(payload) {
 
 self.addEventListener('push', function () {
   console.log(arguments);
+  return self.registration.showNotification(payload.data.title, payload.data);
 });
