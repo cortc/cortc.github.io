@@ -3,6 +3,9 @@ window.App = {
   play () {
     this.videos.forEach(v => v.play());
   },
+  pause () {
+    this.videos.forEach(p => p.pause());
+  },
   seek (value) {
     console.log(value);
     const time = Number(value/1000);
@@ -26,7 +29,7 @@ function init (src) {
     const delta = Math.abs(currentTimes[0] - currentTimes[1]);
 
     if (delta > 0.005) {
-      console.log(`%c ${delta}`, 'background: red; color: white; padding: 2px;');
+      console.log(`%c${delta}`, 'background: red; color: white; padding: 2px 5px;');
       const isReady = App.videos.map(p => p.readyState()).every(state => state === 4)
 
       if (isReady) {
