@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Video.js Player Example</title>
+
+    <link rel="stylesheet" href="./styles.css">
+    
+    <!-- Подключаем CSS Video.js -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/8.5.3/video-js.min.css" rel="stylesheet">
+    
+    <!-- Подключаем сам Video.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/8.5.3/video.min.js" defer></script>
+    
+    <script src="./script.js" defer></script>
+</head>
+<body>
+  <div id="container" class="b-container">
+  </div>
+  <div class="b-controls">
+    <button id="playButton" onClick="javascript:App.play();" disabled="true">Play</button>
+    <input
+    type="range" 
+    id="mySlider" 
+    class="b-slider"
+    min="0" 
+    max="1436885" 
+    step="1"
+    value="0"
+    onChange="javascript:App.seek(this.value);"
+  >
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,24 @@
+.b-container {
+  display: flex;
+}
+
+.b-container__video {
+  flex: auto;
+  height: 480px;
+  position: relative;
+}
+
+.b-container__video video {
+  width: 100%;
+  height: auto;
+}
+
+.b-slider {
+  width: 100%;
+}
+
+.b-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
