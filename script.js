@@ -59,6 +59,7 @@ function init (src) {
 
   const player = videojs(video, {
     controls: false,
+    muted: true,
     sources: [{
       src,
       type: "application/x-mpegurl"
